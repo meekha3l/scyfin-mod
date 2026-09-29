@@ -1178,3 +1178,247 @@ html,
         top: calc(50% + 23vh) !important;
     }
 }
+
+/* --------------------------------------- */
+
+/* full movie background */
+.noBackdropTransparency .detailPagePrimaryContainer,
+.noBackdropTransparency .detailPageWrapperContainer {
+    background-color: transparent !important;
+}
+
+/* main container spacing from nav */
+.layout-desktop .libraryPage {
+    margin-top: 30px;
+}
+
+/* background spacing with sidebar */
+/* .backdropImage { left: 0px; } */
+
+/* remove default header background */
+.MuiPaper-elevation.MuiPaper-elevation1 {
+    background: linear-gradient(rgb(255 255 255 / 0%), rgb(255 255 255 / 0%));
+    box-shadow: unset;
+}
+
+/* alphabet */
+.css-12vt1e4 {
+    border-radius: 100px;
+}
+
+@media (min-width: 900px) {
+    /* header items */
+    header.MuiPaper-elevation>div:nth-child(1) {
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          align-items: center;
+          gap: 16px;
+    }
+    
+    /* search block blur */
+    header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(2) {backdrop-filter: blur(var(--blur)) !important;}
+}
+
+
+    /* header items order (search, profile)*/
+    header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        border-radius: 100px !important;
+        padding: 5px 10px;
+    }
+
+    header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(3) {
+          grid-column: 3;
+          grid-row: 1;
+    }
+    /* -------- */
+
+/* nav spacing */
+header.MuiPaper-elevation>div:nth-child(1)>div {
+    margin-top: 15px;
+}
+
+/* main nav (movies, show) */
+header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    border-radius: 100px;
+    padding: 7px 9px;
+    display: flex;
+    justify-content: center;
+    anchor-name: --nav-bg-anchor;
+}
+
+    header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1):before {
+        content: '';
+        background: var(--primary-background-transparent);
+        border-radius: 100px;
+        backdrop-filter: blur(var(--blur));
+        display: block;
+        position: absolute;
+/*         width: 331px; */
+/*         height: 40px; */
+/*         top: 16px; */
+/*         padding: 7px 10px; */
+        top: anchor(--nav-bg-anchor top);
+        left: anchor(--nav-bg-anchor left);
+        right: anchor(--nav-bg-anchor right);
+        bottom: anchor(--nav-bg-anchor bottom);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+        header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a {
+            border-radius: 100px !important;
+        }
+
+        header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:not(:first-child){
+            font-size: 16px;
+            padding: 7px 15px;
+            margin: 0;
+        }
+
+        header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:not(:first-child) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        /* favorite position */
+        header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:nth-child(2) {order: 1;}
+
+        /* hide main nav on movies, show pages */
+        body:has(.withBackdrop) header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:not(:first-child) {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .8s ease, visibility .8s ease;
+        }
+
+        body:has(.withBackdrop) header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1),
+        body:has(.withBackdrop) header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1):before{
+            background-color: transparent;
+            transition: background-color .8s ease;
+            backdrop-filter: unset;
+        }
+/* -------- */
+
+/* logo */
+header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:nth-child(1) {
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 100px !important;
+    backdrop-filter: blur(var(--blur)) !important;
+    padding: 7px 17px 7px 20px;
+}
+
+    header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:nth-child(1) img {
+        max-height: unset !important;
+        max-width: 35px !important;
+        margin-right: 2px;
+    }
+/* -------- */
+
+
+/* secondary nav (list pages) */
+/* hide secondary nav on scroll */
+.MuiPaper-elevation0 .css-133e01t {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.MuiPaper-elevation1 .css-133e01t {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease-out, visibility .3s ease-out;
+}
+
+/* content type block */
+.css-133e01t .MuiButton-text.css-iqm7ky {
+    border-radius: 100px 0 0 100px !important;
+    background: #1b1b1b !important;
+    padding: 7px 10px 7px 18px;
+}
+
+/* count block */
+.MuiBox-root.css-179zilw {
+    margin: 0;
+}
+
+    .MuiBox-root.css-179zilw .css-14vsv3w {
+        display: block;
+        border-radius: 0 100px 100px 0;
+        background: #323030;
+        padding: 12px 14px 12px 10px;
+    }
+
+/* filter block */
+.MuiStack-root.css-174l32b {
+    margin-left: auto;
+    border-radius: 100px !important;
+    background: #1b1b1b !important;
+    padding: 7px 10px;
+    flex-grow: 0;
+}
+
+.MuiStack-root.css-174l32b .css-au9l87:nth-child(1) {
+    border-radius: 100px 0 0 100px;
+}
+
+.MuiStack-root.css-174l32b .css-au9l87:nth-child(2) {
+    border-radius: 0px 100px 100px 0px;
+}
+/* -------- */
+
+/* episode item fix */
+.listItem:hover {
+    backdrop-filter: blur(var(--blur));
+}
+
+.listItemImage {
+    background-size: cover !important;
+    margin: 15px 15px 15px 5px;
+    height: 10.97vw; /* 10.96875vw */
+    width: 19.5vw;
+}
+/* -------- */
+
+/* mobile */
+@media (max-width: 900px) {
+    /* header backgraund (blur) */
+    .MuiPaper-elevation.MuiPaper-elevation0::before,
+    .MuiPaper-elevation.MuiPaper-elevation1::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        backdrop-filter: blur(5px);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(rgba(24, 24, 24, .5), rgb(255 255 255 / 0%));
+    }
+    
+    .MuiPaper-elevation.MuiPaper-elevation0::before {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s ease-out, visibility 1s ease-out;
+    }
+
+    .MuiPaper-elevation.MuiPaper-elevation1::before {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .3s ease, visibility .3s ease;    
+    }
+    
+    /* background spacing fix */
+    .layout-mobile .itemBackdrop {
+        margin-top: -70px !important;
+    }
+}
