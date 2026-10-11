@@ -1348,15 +1348,14 @@ header.MuiPaper-elevation>div:nth-child(1)>div:nth-child(1)>a:nth-child(1) {
 }
 
 /* count block */
-.MuiBox-root.css-179zilw {
+.MuiBox-root.css-63irmi {
     margin: 0;
 }
 
-    .MuiBox-root.css-179zilw .css-14vsv3w {
-        display: block;
+    .MuiBox-root.css-63irmi .css-1so75cn {
         border-radius: 0 100px 100px 0;
-        background: #323030;
         padding: 12px 14px 12px 10px;
+        padding: 20px 5px 20px 0;
     }
 
 /* filter block */
